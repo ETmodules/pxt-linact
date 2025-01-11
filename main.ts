@@ -84,7 +84,7 @@ namespace EtLinact {
     //% speed.min=0 speed.max=100 speed.defl=100
     export function speed(motor: Motor, speed: number) {
         let signal = "speed" + (motor == Motor.M1 ? "1" : "2")
-        EtCommon.setValue(MODULE, "speed", speed.toString())
+        EtCommon.setValue(MODULE, signal, speed.toString())
     }
 
     //% block="move %motor to the end"
