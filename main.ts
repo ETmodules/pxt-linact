@@ -79,15 +79,15 @@ namespace EtLinact {
             EtCommon.setValue(MODULE, "stop2", "")
     }
 
-    //% block="move %motor outward"
-    //% block.loc.nl="beweeg %motor naar buiten"
+    //% block="move %motor to the end"
+    //% block.loc.nl="beweeg %motor naar het einde"
     export function moveOut(motor: Motor) {
         let signal = "move" + (motor == Motor.M1 ? "1" : "2")
         EtCommon.setValue(MODULE, signal, "out")
     }
 
-    //% block="move %motor inward"
-    //% block.loc.nl="beweeg %motor naar binnen"
+    //% block="move %motor to the beginning"
+    //% block.loc.nl="beweeg %motor naar het begin"
     export function moveIn(motor: Motor) {
         let signal = "move" + (motor == Motor.M1 ? "1" : "2")
         EtCommon.setValue(MODULE, signal, "in")
