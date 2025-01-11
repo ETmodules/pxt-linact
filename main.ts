@@ -44,8 +44,8 @@ namespace EtLinact {
         }
     }
 
-    //% block="when motor %motor stops at the beginning"
-    //% block.loc.nl="wanneer motor %motor bij het begin is"
+    //% block="when %motor stops at the beginning"
+    //% block.loc.nl="wanneer %motor bij het begin is"
     export function onBeginStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventBeginStopM1 = programmableCode
@@ -57,8 +57,8 @@ namespace EtLinact {
         }
     }
 
-    //% block="when motor %motor stops at the end"
-    //% block.loc.nl="wanneer motor %motor aan het einde is"
+    //% block="when %motor stops at the end"
+    //% block.loc.nl="wanneer %motor aan het einde is"
     export function onEndStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventEndStopM1 = programmableCode
@@ -70,13 +70,21 @@ namespace EtLinact {
         }
     }
 
-    //% block="stop motor %motor"
-    //% block.loc.nl="stop motor %motor"
+    //% block="stop %motor"
+    //% block.loc.nl="stop %motor"
     export function stop(motor: Motor) {
         if (motor == Motor.M1)
             EtCommon.setValue(MODULE, "stop1", "")
         else
             EtCommon.setValue(MODULE, "stop2", "")
+    }
+
+    //% block="set the speed of %motor to %speed \\%"
+    //% block.loc.nl="stel het snelheid van %motor in op %speed \\%"
+    //% speed.min=0 speed.max=100 speed.defl=100
+    export function speed(motor: Motor, speed: number) {
+        let signal = "speed" + (motor == Motor.M1 ? "1" : "2")
+        EtCommon.setValue(MODULE, "speed", speed.toString())
     }
 
     //% block="move %motor to the end"
