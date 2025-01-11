@@ -1,4 +1,4 @@
-//% color="#EEAA00" icon="\uf028"
+//% color="#EEAA00" icon="\uf362"
 //% block="ET: Linact"
 //% block.loc.nl="ET: Linact"
 namespace EtLinact {
@@ -44,8 +44,8 @@ namespace EtLinact {
         }
     }
 
-    //% block="when motor %motor stops at the begin"
-    //% block.loc.nl="wanneer motor %motor bij het begin stopt"
+    //% block="when motor %motor stops at the beginning"
+    //% block.loc.nl="wanneer motor %motor bij het begin is"
     export function onBeginStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventBeginStopM1 = programmableCode
@@ -58,7 +58,7 @@ namespace EtLinact {
     }
 
     //% block="when motor %motor stops at the end"
-    //% block.loc.nl="wanneer motor %motor bij het einde stopt"
+    //% block.loc.nl="wanneer motor %motor aan het einde is"
     export function onEndStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventEndStopM1 = programmableCode
