@@ -13,8 +13,8 @@ namespace EtLinact {
         M2
     }
 
-    let EVENT_BEGINSTOP = "beginstop"
-    let EVENT_ENDSTOP = "endstop"
+    let EVENT_M1STOP = "m1stop"
+    let EVENT_M2STOP = "m2stop"
     let EventBeginStopM1: EtCommon.eventHandler
     let EventEndStopM1: EtCommon.eventHandler
     let EventBeginStopM2: EtCommon.eventHandler
@@ -49,11 +49,11 @@ namespace EtLinact {
     export function onBeginStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventBeginStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_BEGINSTOP, "m1", onEventBeginStopM1)
+            EtCommon.events.register(MODULE, EVENT_M1STOP, "begin", onEventBeginStopM1)
         }
         else {
             EventBeginStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_BEGINSTOP, "m2", onEventBeginStopM1)
+            EtCommon.events.register(MODULE, EVENT_M2STOP, "begin", onEventBeginStopM1)
         }
     }
 
@@ -62,11 +62,11 @@ namespace EtLinact {
     export function onEndStop(motor: Motor, programmableCode: () => void): void {
         if (motor == Motor.M1) {
             EventEndStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_ENDSTOP, "m1", onEventEndStopM1)
+            EtCommon.events.register(MODULE, EVENT_M1STOP, "end", onEventEndStopM1)
         }
         else {
             EventEndStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_ENDSTOP, "m2", onEventEndStopM1)
+            EtCommon.events.register(MODULE, EVENT_M2STOP, "end", onEventEndStopM1)
         }
     }
 
