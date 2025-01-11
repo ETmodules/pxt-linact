@@ -52,8 +52,8 @@ namespace EtLinact {
             EtCommon.events.register(MODULE, EVENT_M1STOP, "begin", onEventBeginStopM1)
         }
         else {
-            EventBeginStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_M2STOP, "begin", onEventBeginStopM1)
+            EventBeginStopM2 = programmableCode
+            EtCommon.events.register(MODULE, EVENT_M2STOP, "begin", onEventBeginStopM2)
         }
     }
 
@@ -65,8 +65,8 @@ namespace EtLinact {
             EtCommon.events.register(MODULE, EVENT_M1STOP, "end", onEventEndStopM1)
         }
         else {
-            EventEndStopM1 = programmableCode
-            EtCommon.events.register(MODULE, EVENT_M2STOP, "end", onEventEndStopM1)
+            EventEndStopM2 = programmableCode
+            EtCommon.events.register(MODULE, EVENT_M2STOP, "end", onEventEndStopM2)
         }
     }
 
