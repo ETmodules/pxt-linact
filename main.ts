@@ -13,8 +13,6 @@ namespace EtLinact {
         M2
     }
 
-    let EVENT_M1STOP = "m1stop"
-    let EVENT_M2STOP = "m2stop"
     let EventBeginStopM1: EtCommon.eventHandler
     let EventEndStopM1: EtCommon.eventHandler
     let EventBeginStopM2: EtCommon.eventHandler
@@ -74,9 +72,9 @@ namespace EtLinact {
     //% block.loc.nl="stop %motor"
     export function stop(motor: Motor) {
         if (motor == Motor.M1)
-            EtCommon.sendSignal(MODULE, "stop1", "")
+            EtCommon.sendSignal(MODULE, "stopM1", "")
         else
-            EtCommon.sendSignal(MODULE, "stop2", "")
+            EtCommon.sendSignal(MODULE, "stopM2", "")
     }
 
     //% block="set the speed of %motor to %speed \\%"
